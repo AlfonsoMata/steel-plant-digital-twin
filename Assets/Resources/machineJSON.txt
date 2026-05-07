@@ -1,19 +1,25 @@
 {
 	"machine": [
 		{
-		  "name": "BlastFurnace_01",
-		  "status": "running",
-		  "temperature": 45
+		  "s_name": "BlastFurnace_01",
+		  "s_status": "Running",
+		  "n_temperature": 1450,
+		  "n_max_temperature": 1600,
+		  "n_min_temperature": 1200		  
 		},
 		{
-		 "name": "Conveyor_02",
-		  "status": "warning",
-		  "temperature": 10
+		  "s_name": "Conveyor_02",
+		  "s_status": "Warning",
+		  "n_temperature": 65,
+		  "n_max_temperature": 70,
+		  "n_min_temperature": 40
 		},
 		{
-		 "name": "CoolingSystem_03",
-		 "status": "offline",
-		 "temperature":0
+		 "s_name": "CoolingSystem_03",
+		 "s_status": "Offline",
+		 "n_temperature":0,
+		 "n_max_temperature": 30,
+		 "n_min_temperature": 10
 		}
 	]
 }
