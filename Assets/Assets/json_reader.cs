@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.CompilerServices;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,8 +8,7 @@ public class json_reader : MonoBehaviour
 {
     public TextAsset textJSON;
 
-    [SerializeField]
-    private GameObject[] machines;
+    private GameObject findedMachines;
 
     [System.Serializable]
     public class Machine
@@ -20,6 +20,8 @@ public class json_reader : MonoBehaviour
 
     private Renderer TempRenderer;
 
+    private TextMeshProUGUI TempTextTag;
+
     [System.Serializable]
     public class MachineList
     {
@@ -30,9 +32,13 @@ public class json_reader : MonoBehaviour
 
     private void ChangeMachineColor(int index)
     {
-        if (mymachineList.machine[index].name == machines[index].name)
+        findedMachines = GameObject.Find(mymachineList.machine[index].name);
+        if (findedMachines != null)
         {
-            TempRenderer = machines[index].GetComponent<Renderer>();
+
+            TempRenderer = findedMachines.GetComponent<Renderer>();
+            TempTextTag = findedMachines.GetComponentInChildren<TextMeshProUGUI>();
+            TempTextTag.text = "Name: " + mymachineList.machine[index].name + "\n Status: " + mymachineList.machine[index].status + "\n Temperatura: " + mymachineList.machine[index].temperature;
             switch (mymachineList.machine[index].status)
             {
                 case "running":

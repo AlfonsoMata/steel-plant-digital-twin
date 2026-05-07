@@ -1,17 +1,17 @@
 {
 	"machine": [
 		{
-		  "name": "machineOne",
+		  "name": "BlastFurnace_01",
 		  "status": "running",
 		  "temperature": 45
 		},
 		{
-		 "name": "machineTwo",
+		 "name": "Conveyor_02",
 		  "status": "warning",
 		  "temperature": 10
 		},
 		{
-		 "name": "machineThree",
+		 "name": "CoolingSystem_03",
 		 "status": "offline",
 		 "temperature":0
 		}
