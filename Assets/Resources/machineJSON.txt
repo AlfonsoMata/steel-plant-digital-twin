@@ -1,0 +1,19 @@
+{
+	"machine": [
+		{
+		  "name": "machineOne",
+		  "status": "running",
+		  "temperature": 45
+		},
+		{
+		 "name": "machineTwo",
+		  "status": "warning",
+		  "temperature": 10
+		},
+		{
+		 "name": "machineThree",
+		 "status": "offline",
+		 "temperature":0
+		}
+	]
+}
