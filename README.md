@@ -86,7 +86,11 @@ This prototype was built as a simulation of industrial system monitoring workflo
 - Multi-platform deployment
 
 ## Demo
-
 <img width="1119" height="602" alt="image" src="https://github.com/user-attachments/assets/d7ffce89-8dfe-4871-8ff6-2aca308157a2" />
+
+
+
+https://github.com/user-attachments/assets/3b33875c-d5bb-4c07-ac2e-47a7354286ae
+
 
 
