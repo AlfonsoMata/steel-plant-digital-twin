@@ -39,6 +39,8 @@ C# Data Parser
     ↓
 Machine Manager
     ↓
+Load Data on each Machine
+    ↓
 Unity 3D Visualization + Dashboard UI
 ```
 
@@ -85,4 +87,6 @@ This prototype was built as a simulation of industrial system monitoring workflo
 
 ## Demo
 
-(Add screenshots or video here)
+<img width="1119" height="602" alt="image" src="https://github.com/user-attachments/assets/d7ffce89-8dfe-4871-8ff6-2aca308157a2" />
+
+
