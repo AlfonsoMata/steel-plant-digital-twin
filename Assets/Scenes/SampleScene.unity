@@ -710,7 +710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -856, y: 646}
+  m_AnchoredPosition: {x: -856, y: 650}
   m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &570286579
@@ -1122,9 +1122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6af16282ee6efae4eb3f75297e8a00f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::json_reader
-  textJSON: {fileID: 4900000, guid: 48d7d2f50a776bd4a92ff62df22499fc, type: 3}
+  ta_textJSON: {fileID: 4900000, guid: 48d7d2f50a776bd4a92ff62df22499fc, type: 3}
   t_dashboard_Text: {fileID: 570286579}
-  mymachineList:
+  l_mymachineList:
     machine: []
 --- !u!4 &1144071412
 Transform:
@@ -1175,8 +1175,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -979, y: 589}
-  m_SizeDelta: {x: 800, y: 228.4}
+  m_AnchoredPosition: {x: -979, y: 535}
+  m_SizeDelta: {x: 800, y: 294.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1192126572
 MonoBehaviour:

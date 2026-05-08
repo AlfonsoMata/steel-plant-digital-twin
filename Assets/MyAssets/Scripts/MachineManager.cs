@@ -1,15 +1,11 @@
-using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using TMPro;
-using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class json_reader : MonoBehaviour
+public class MachineManager : MonoBehaviour
 {
-    public TextAsset textJSON;
-    private GameObject findedMachines;
+    public TextAsset ta_textJSON;
+    private GameObject go_findedMachines;
     private List<MachineLogic> l_machines = new List<MachineLogic>();
 
     [SerializeField]
@@ -33,14 +29,14 @@ public class json_reader : MonoBehaviour
 
     public MachineList l_mymachineList = new MachineList();
 
-
     private void CheckMachines()
     {
 
         int n_avalible_machines = 0;
         int n_warnings = 0;
         int n_offline_machines = 0;
-
+        float n_plant_efficiency = 0;
+        int n_production_rate = Random.Range(0,240);
         for (int i = 0; i < l_machines.Count; i++)
         {
             switch(l_machines[i].info.s_status)
@@ -63,12 +59,14 @@ public class json_reader : MonoBehaviour
             }
         }
 
-        t_dashboard_Text.text = "Steel Plant Monitoring Dashboard\r\nCurrent avaliable machines : " + n_avalible_machines + " \r\nWarning alerts : " + n_warnings + "\r\nOffline machines " + n_offline_machines;
+        n_plant_efficiency = (n_avalible_machines * 100f) / l_machines.Count; 
+
+        t_dashboard_Text.text = "Steel Plant Monitoring Dashboard\r\nCurrent avaliable machines : " + n_avalible_machines + " \r\nWarning alerts : " + n_warnings + "\r\nOffline machines " + n_offline_machines + "\r\nPlant efficiency: "+ n_plant_efficiency + "%" + "\r\nProduction rate: " + n_production_rate + "t/h" + "\r\nLast Update: " + System.DateTime.Now.ToString("HH:mm:ss");
     }
 
     private void TransferData(Machine machine)
     {
-        MachineLogic machineLogic = findedMachines.GetComponent<MachineLogic>();
+        MachineLogic machineLogic = go_findedMachines.GetComponent<MachineLogic>();
         machineLogic.info.s_name = machine.s_name;
         machineLogic.info.s_status = machine.s_status;
         machineLogic.info.n_temperature = machine.n_temperature;
@@ -78,19 +76,19 @@ public class json_reader : MonoBehaviour
 
     private void LoadInformation(int index)
     {
-        findedMachines = GameObject.Find(l_mymachineList.machine[index].s_name);
+        go_findedMachines = GameObject.Find(l_mymachineList.machine[index].s_name);
 
-        if (findedMachines != null)
+        if (go_findedMachines != null)
         {
-            l_machines.Add(findedMachines.GetComponent<MachineLogic>());
+            l_machines.Add(go_findedMachines.GetComponent<MachineLogic>());
             TransferData(l_mymachineList.machine[index]);
-            findedMachines.GetComponent<MachineLogic>().InitializeMachine();
+            go_findedMachines.GetComponent<MachineLogic>().InitializeMachine();
         }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        l_mymachineList = JsonUtility.FromJson<MachineList>(textJSON.text);
+        l_mymachineList = JsonUtility.FromJson<MachineList>(ta_textJSON.text);
 
         for (int i = 0; i < l_mymachineList.machine.Length; i++)
         {

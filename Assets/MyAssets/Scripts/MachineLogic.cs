@@ -1,7 +1,5 @@
-using System;
 using TMPro;
 using UnityEngine;
-using static json_reader;
 
 public class MachineLogic : MonoBehaviour
 {
